@@ -9,6 +9,7 @@ module.exports = {
         320: "320px",
       },
       width: {
+        70: "70px",
         125: "125px",
         150: "150px",
         190: "190px",
@@ -49,7 +50,8 @@ module.exports = {
         cartNumBg: "#e80013",
         primary: "#f5f3f3",
         cardOverlay: "rgba(256,256,256,0.4)",
-        lightTextGray: "#9ca0ab"
+        lightTextGray: "#9ca0ab",
+        dashboardBg: "#d9e8cf"
       },
       screens: {
         sm: "640px",

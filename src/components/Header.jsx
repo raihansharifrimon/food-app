@@ -63,16 +63,16 @@ const Header = () => {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8"
           >
-            <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
+            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
               Home
             </li>
-            <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
+            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
               Menu
             </li>
-            <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
+            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
               About Us
             </li>
-            <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
+            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
               Service
             </li>
           </motion.ul>
