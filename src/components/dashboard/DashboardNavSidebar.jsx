@@ -1,9 +1,9 @@
 import React from "react";
 import {
   MdDashboardCustomize,
-  MdReceipt,
+  MdLocalGroceryStore,
+  MdReceiptLong,
   MdSettings,
-  MdShoppingBasket,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
@@ -19,13 +19,13 @@ const dashboardMenus = [
     id: 2,
     label: "Orders",
     route: "/orders",
-    icon: <MdReceipt />,
+    icon: <MdReceiptLong />,
   },
   {
     id: 3,
     label: "Products",
     route: "/products",
-    icon: <MdShoppingBasket />,
+    icon: <MdLocalGroceryStore />,
   },
   {
     id: 4,
@@ -47,6 +47,7 @@ const DashboardNavSidebar = () => {
         {dashboardMenus &&
           dashboardMenus.map((menu) => (
             <Link
+              key={menu.id}
               to={menu.route}
               className="group w-10 h-10 relative flex items-center justify-start gap-1 text-2xl text-gray-600 p-2 rounded-md hover:bg-orange-500 hover:text-white transition-all duration-100 ease-in-out"
             >

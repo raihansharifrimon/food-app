@@ -13,6 +13,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { actionType } from "../contexts/reducer";
 import { useStateValue } from "../contexts/StateProvider";
 import { app } from "../firebase.config";
+import { websiteMenus } from "../utils/data";
 
 const Header = () => {
   const firebaseAuth = getAuth(app);
@@ -57,25 +58,23 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-8">
-          <motion.ul
+          <motion.div
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8"
           >
-            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
-              Home
-            </li>
-            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
-              Menu
-            </li>
-            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
-              About Us
-            </li>
-            <li className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer">
-              Service
-            </li>
-          </motion.ul>
+            {websiteMenus &&
+              websiteMenus.map((menu) => (
+                <Link
+                  key={menu.id}
+                  to={menu.route}
+                  className="px-4 py-2 flex items-center justify-start gap-3 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer"
+                >
+                  {menu.label}
+                </Link>
+              ))}
+          </motion.div>
 
           <div className="relative flex items-center justify-center">
             <MdShoppingBasket className="text-textcolor text-2xl cursor-pointer" />
@@ -161,20 +160,18 @@ const Header = () => {
                     Dashboard <MdDashboardCustomize />
                   </Link>
                 )}
-                <ul className="flex items-start flex-col justify-center">
-                  <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer w-full">
-                    Home
-                  </li>
-                  <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer w-full">
-                    Menu
-                  </li>
-                  <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer w-full">
-                    About Us
-                  </li>
-                  <li className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer w-full">
-                    Service
-                  </li>
-                </ul>
+                <div className="flex items-start flex-col justify-center">
+                  {websiteMenus &&
+                    websiteMenus.map((menu) => (
+                      <Link
+                        key={menu.id}
+                        to={menu.route}
+                        className="px-4 py-2 flex items-center justify-start gap-3 hover:bg-slate-200 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer w-full"
+                      >
+                        {menu.label}
+                      </Link>
+                    ))}
+                </div>
                 <p
                   onClick={logout}
                   className="m-2 p-2 rounded-md flex items-center justify-center gap-3 bg-gray-200 hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base cursor-pointer"
