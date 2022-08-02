@@ -11,8 +11,8 @@ const DashboardHome = () => {
       <div className="col-span-4 lg:col-span-3">
         <DashboardHomeBanner />
         <DashboardCategories />
-        <DashboardProductSection />
-        <DashboardProductSection />
+        <DashboardProductSection heading={'Popular'} highLightWord={'Dishes'} route={'/products'} />
+        <DashboardProductSection heading={'Recent'} highLightWord={'orders'} route={'/products'} />
       </div>
       <div className="col-span-4 lg:col-span-1 bg-blue-400">Rimon</div>
     </div>

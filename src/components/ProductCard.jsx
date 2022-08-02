@@ -3,16 +3,14 @@ import React, { useState } from "react";
 import {
   MdAddShoppingCart,
   MdOutlineFavorite,
-  MdOutlineFavoriteBorder,
   MdRemoveShoppingCart,
   MdStar,
   MdStarBorder,
 } from "react-icons/md";
-import I4 from "../assets/images/i4.png";
 
-const ProductCard = () => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [cartItem, setCartItem] = useState(0);
+const ProductCard = ({ product }) => {
+  const [isFavorite, setIsFavorite] = useState(product.is_favorite);
+  const [cartItem, setCartItem] = useState(product.cart_items);
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
@@ -31,7 +29,7 @@ const ProductCard = () => {
   return (
     <div className="relative w-full p-2 rounded-lg border border-gray-200 hover:border-orange-400 transition-colors overflow-hidden shadow-sm shadow-gray-200/80">
       <img
-        src={I4}
+        src={product.image}
         className="w-full h-28 sm:h-full sm:aspect-video object-contain mb-2 cursor-pointer hover:scale-125 transition-transform duration-300 ease-in-out"
         alt="product"
       />
@@ -59,10 +57,11 @@ const ProductCard = () => {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
           <div className="flex flex-col gap-1 justify-center">
             <h5 className="text-sm sm:text-base font-medium text-headingColor">
-              Venilla Ice-cream
+              {product.title}
             </h5>
             <p className="text-lg sm:text-xl font-semibold text-black">
-              <span className="text-orange-400 text-lg">$</span>5.25
+              <span className="text-orange-400 text-lg">$</span>
+              {product.price}
             </p>
           </div>
 
@@ -103,19 +102,19 @@ const ProductCard = () => {
         </div>
       </div>
 
-      <p className="px-2 sm:px-3 py-1 bg-red-500 text-white absolute top-2 sm:top-4 shadow-md shadow-red-50 left-0 rounded-tr-md rounded-br-md text-xs sm:text-sm">
-        15% Off
-      </p>
+      {product.offer && (
+        <p className="px-2 sm:px-3 py-1 bg-red-500 text-white absolute top-2 sm:top-4 shadow-md shadow-red-50 left-0 rounded-tr-md rounded-br-md text-xs sm:text-sm">
+          {product.offer}
+        </p>
+      )}
       <motion.button
         onClick={handleFavorite}
         whileTap={{ scale: 0.8 }}
         className="text-xl sm:text-2xl absolute top-2 sm:top-4 right-2 sm:right-4 outline-none"
       >
-        {isFavorite ? (
-          <MdOutlineFavorite className="text-red-500" />
-        ) : (
-          <MdOutlineFavoriteBorder className="text-gray-500" />
-        )}
+        <MdOutlineFavorite
+          className={isFavorite ? "text-red-500" : "text-gray-300 hover:text-gray-400"}
+        />
       </motion.button>
     </div>
   );
