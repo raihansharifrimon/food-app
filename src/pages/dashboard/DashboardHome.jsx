@@ -12,6 +12,7 @@ const DashboardHome = () => {
         <DashboardHomeBanner />
         <DashboardCategories />
         <DashboardProductSection />
+        <DashboardProductSection />
       </div>
       <div className="col-span-4 lg:col-span-1 bg-blue-400">Rimon</div>
     </div>

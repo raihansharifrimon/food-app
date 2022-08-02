@@ -29,10 +29,10 @@ const ProductCard = () => {
   };
 
   return (
-    <div className="relative w-full p-2 rounded-lg border border-gray-100 hover:border-orange-400 transition-colors overflow-hidden shadow-lg shadow-gray-400/30">
+    <div className="relative w-full p-2 rounded-lg border border-gray-200 hover:border-orange-400 transition-colors overflow-hidden shadow-sm shadow-gray-200/80">
       <img
         src={I4}
-        className="w-full h-28 sm:h-full sm:aspect-video object-contain mb-2 cursor-pointer hover:scale-125 transition-transform duration-200 ease-in-out"
+        className="w-full h-28 sm:h-full sm:aspect-video object-contain mb-2 cursor-pointer hover:scale-125 transition-transform duration-300 ease-in-out"
         alt="product"
       />
       <div className="">
