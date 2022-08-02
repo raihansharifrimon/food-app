@@ -71,7 +71,7 @@ const ProductCard = () => {
             <motion.button
               whileTap={{ scale: 0.7 }}
               onClick={addToCart}
-              className="w-full mt-2 lg:mt-0 lg:w-10 h-8 sm:10 flex items-center justify-center bg-orange-500 p-2 rounded-full text-white text-2xl outline-none hover:bg-orange-600"
+              className="w-full mt-2 lg:mt-0 lg:w-10 h-8 lg:h-10 flex items-center justify-center bg-orange-500 p-2 rounded-full text-white text-2xl outline-none hover:bg-orange-600"
             >
               <MdAddShoppingCart />
             </motion.button>
