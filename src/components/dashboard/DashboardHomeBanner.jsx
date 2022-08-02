@@ -44,11 +44,11 @@ const DashboardHomeBanner = () => {
               onClick={() => handleChange(idx)}
               className={`${
                 idx === isActive ? "bg-orange-400" : "bg-white"
-              } group w-[100px] md:w-40 h-[75px] flex flex-col gap-1 items-start justify-center rounded-lg hover:bg-orange-400 focus:outline-none cursor-pointer px-3 py-4 transition duration-75 ease-in-out`}
+              } group w-[100px] md:w-40 h-[75px] flex flex-col gap-1 items-start justify-center rounded-md hover:bg-orange-400 focus:outline-none cursor-pointer px-3 py-4 transition duration-75 ease-in-out`}
             >
               <p
                 className={`${
-                  idx === isActive ? "text-white" : "text-gray-400"
+                  idx === isActive ? "text-white" : "text-gray-500"
                 } group-hover:text-white text-sm`}
               >
                 {plan.name}
