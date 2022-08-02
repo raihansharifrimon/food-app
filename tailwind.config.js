@@ -51,7 +51,8 @@ module.exports = {
         primary: "#f5f3f3",
         cardOverlay: "rgba(256,256,256,0.4)",
         lightTextGray: "#9ca0ab",
-        dashboardBg: "#d9e8cf"
+        dashboardBg: "#d9e8cf",
+        dashboardCardBg: "#e5f4c4"
       },
       screens: {
         sm: "640px",
@@ -62,5 +63,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 }

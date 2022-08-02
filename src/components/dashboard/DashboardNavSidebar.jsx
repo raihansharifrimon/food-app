@@ -12,25 +12,25 @@ const dashboardMenus = [
   {
     id: 1,
     label: "Home",
-    route: "/dashboard",
+    route: "",
     icon: <MdDashboardCustomize />,
   },
   {
     id: 2,
     label: "Orders",
-    route: "/orders",
+    route: "orders",
     icon: <MdReceiptLong />,
   },
   {
     id: 3,
     label: "Products",
-    route: "/products",
+    route: "products",
     icon: <MdLocalGroceryStore />,
   },
   {
     id: 4,
     label: "Settings",
-    route: "/settings",
+    route: "settings",
     icon: <MdSettings />,
   },
 ];
