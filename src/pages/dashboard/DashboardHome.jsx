@@ -1,5 +1,9 @@
 import React from "react";
-import { DashboardCategories, DashboardHomeBanner } from "../../components";
+import {
+  DashboardCategories,
+  DashboardHomeBanner,
+  DashboardProductSection,
+} from "../../components";
 
 const DashboardHome = () => {
   return (
@@ -7,6 +11,7 @@ const DashboardHome = () => {
       <div className="col-span-4 lg:col-span-3">
         <DashboardHomeBanner />
         <DashboardCategories />
+        <DashboardProductSection />
       </div>
       <div className="col-span-4 lg:col-span-1 bg-blue-400">Rimon</div>
     </div>
