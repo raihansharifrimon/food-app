@@ -53,8 +53,8 @@ const products = [
 const DashboardProductSection = ({ heading, highLightWord, route }) => {
   return (
     <div className="mb-8">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-semibold text-headingColor mb-6 py-2 after:w-14 after:h-1 after:bg-orange-500 after:absolute after:left-0 after:bottom-0 after:rounded-full relative ">
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="text-2xl font-semibold text-headingColor py-2 after:w-14 after:h-1 after:bg-orange-500 after:absolute after:left-0 after:bottom-0 after:rounded-full relative ">
           {heading} <span className="text-orange-500">{highLightWord}</span>
         </h2>
 
